@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Emmanuel's personal homepage and glucose data visualization project.">
+    <title>Emmanuel | Analytics Engineer &amp; Data Storyteller</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Emmanuel home">ES<span>.</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#story">My story</a>
+        <a href="#glucose">Glucose data</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Analytics engineer · data storyteller</p>
+          <h1 id="hero-title">Enjoying complex data and creating <em>value for others.</em></h1>
+          <p class="hero-intro">
+            I'm Emmanuel, a Costa Rican living in the USA. Since 2015, I've worked
+            across the pharmaceutical industry, finance, and higher education to make data
+            useful, human, and easier to act on.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#story">Read my story <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="#glucose">See the live chart <span aria-hidden="true">↘</span></a>
+          </div>
+          <dl class="quick-facts" aria-label="Quick facts">
+            <div>
+              <dt>From</dt>
+              <dd>Costa Rica</dd>
+            </div>
+            <div>
+              <dt>Based in</dt>
+              <dd>USA</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Lead Analytics Engineer</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="hero-portrait">
+          <div class="portrait-frame">
+            <img
+              src="images/PXL_20260828_145734468.RAW-01.jpg"
+              alt="Emmanuel smiling outdoors"
+              width="6144"
+              height="8160"
+              fetchpriority="high"
+            >
+          </div>
+          <figcaption><span aria-hidden="true">✳</span> Curious by nature, precise by practice.</figcaption>
+        </figure>
+      </section>
+
+      <section class="story section-grid" id="story" aria-labelledby="story-title">
+        <div>
+          <p class="eyebrow">A little context</p>
+          <h2 id="story-title">Data is personal.</h2>
+        </div>
+        <div class="story-copy">
+          <p>
+            I've lived with type 1 diabetes since 2021. That experience changed
+            the way I think about dashboards: the best visualization is not the
+            one with the most decoration, but the one that helps someone make a
+            better decision at the right moment.
+          </p>
+          <p>
+            I've contributed to open-source projects including
+            <a href="https://github.com/nightscout" rel="noreferrer">Nightscout</a>
+            and <a href="https://github.com/nightscout/AndroidAPS" rel="noreferrer">AndroidAPS</a>.
+            This small chart is an ongoing experiment in making personal glucose
+            data more understandable.
+          </p>
+        </div>
+      </section>
+
+      <section class="chart-section" id="glucose" aria-labelledby="chart-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Live from my Nightscout server</p>
+            <h2 id="chart-title">The last 100 readings</h2>
+          </div>
+          <button class="refresh-button" id="refresh-button" type="button">
+            <span aria-hidden="true">↻</span> Refresh now
+          </button>
+        </div>
+        <div class="chart-card">
+          <div class="chart-meta">
+            <p id="chart-status" role="status" aria-live="polite">Loading glucose data…</p>
+            <p class="chart-note">Updates automatically every 20 minutes · mg/dL</p>
+          </div>
+          <figure class="chart-figure">
+            <svg id="glucose-chart" role="img" aria-labelledby="chart-title chart-description"></svg>
+            <figcaption id="chart-description">
+              A line chart of the latest 100 glucose readings. The chart will report
+              an error if the Nightscout service is unavailable.
+            </figcaption>
+          </figure>
+          <p class="chart-summary" id="chart-summary"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Made with curiosity, open data, and a little D3.</p>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
