@@ -3,8 +3,6 @@ name: Deploy site
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,14 +22,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Fetch glucose data
-        env:
-          NIGHTSCOUT_URL: ${{ secrets.NIGHTSCOUT_URL }}
-          NIGHTSCOUT_TOKEN: ${{ secrets.NIGHTSCOUT_TOKEN }}
-        run: node scripts/fetch-glucose.mjs _site/data
       - name: Assemble site
         run: mkdir -p _site && cp -r index.html styles.css app.js images _site/
       - uses: actions/configure-pages@v5

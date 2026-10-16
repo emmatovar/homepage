@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Emmanuel's personal homepage and glucose data visualization project.">
-    <title>Emmanuel | Analytics Engineer &amp; Data Storyteller</title>
+    <meta name="description" content="Emmanuel's personal homepage, portfolio, and live glucose data visualization project.">
+    <title>Emmanuel | Lead Analytics Engineer &amp; Health Tech</title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
@@ -22,12 +22,12 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Analytics engineer · data storyteller</p>
-          <h1 id="hero-title">Enjoying complex data and creating <em>value for others.</em></h1>
+          <p class="eyebrow">Lead Analytics Engineer · Health Tech &amp; Open Data</p>
+          <h1 id="hero-title">Translating complex data into <em>decisions that matter.</em></h1>
           <p class="hero-intro">
             I'm Emmanuel, a Costa Rican living in the USA. Since 2015, I've worked
-            across the pharmaceutical industry, finance, and higher education to make data
-            useful, human, and easier to act on.
+            building modern data platforms, reliable pipelines, and intuitive dashboards
+            across pharmaceutical, finance, and higher education sectors.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#story">Read my story <span aria-hidden="true">↓</span></a>
@@ -51,10 +51,10 @@
         <figure class="hero-portrait">
           <div class="portrait-frame">
             <img
-              src="images/PXL_20260828_145734468.RAW-01.jpg"
+              src="images/emmanuel-portrait.jpg"
               alt="Emmanuel smiling outdoors"
-              width="6144"
-              height="8160"
+              width="800"
+              height="1063"
               fetchpriority="high"
             >
           </div>
@@ -88,7 +88,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Live from my Nightscout server</p>
-            <h2 id="chart-title">The last 100 readings</h2>
+            <h2 id="chart-title">Live Glucose: The Last ~8 Hours</h2>
           </div>
           <button class="refresh-button" id="refresh-button" type="button">
             <span aria-hidden="true">↻</span> Refresh now
@@ -97,13 +97,12 @@
         <div class="chart-card">
           <div class="chart-meta">
             <p id="chart-status" role="status" aria-live="polite">Loading glucose data…</p>
-            <p class="chart-note">Updates automatically every 20 minutes · mg/dL</p>
+            <p class="chart-note">Updates automatically · Target: 70–140 mg/dL · mg/dL</p>
           </div>
           <figure class="chart-figure">
             <svg id="glucose-chart" role="img" aria-labelledby="chart-title chart-description"></svg>
             <figcaption id="chart-description">
-              A line chart of the latest 100 glucose readings. The chart will report
-              an error if the Nightscout service is unavailable.
+              Live Glucose: The Last ~8 Hours. A continuous line chart of the latest glucose readings with a target range of 70–140 mg/dL.
             </figcaption>
           </figure>
           <p class="chart-summary" id="chart-summary"></p>
