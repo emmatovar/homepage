@@ -82,8 +82,12 @@ h2 { font-size: clamp(2.4rem, 5vw, 4.5rem); }
 .axis path, .axis line { stroke: var(--line); }
 .grid line { stroke: var(--line); stroke-dasharray: 2 5; }
 .grid path { display: none; }
+.target-band { fill: rgb(15 111 112 / 8%); }
+.target-boundary { stroke: rgb(15 111 112 / 28%); stroke-dasharray: 3 4; stroke-width: 1; }
+.target-label { fill: var(--teal); font-size: .66rem; font-weight: 600; text-anchor: end; }
 .glucose-line { fill: none; stroke: var(--teal); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
 .glucose-point { fill: var(--card); stroke: var(--coral); stroke-width: 2; }
+.glucose-point.in-range { stroke: var(--teal); }
 .site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 1.5rem 0 2rem; }
 .site-footer p { color: var(--muted); font-size: .8rem; margin: 0; }
 @media (max-width: 760px) {
